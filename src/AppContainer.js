@@ -7,14 +7,16 @@ const deviceWidth = Dimensions.get("window").width;
 //import Login from "@views/Login";
 import Sidebar from "./view/Sidebar";
 import HomeContainer  from "./view/Home";
+import HistoryContainer  from "./view/History";
+import Login from "./view/Login";
 import SidebarContainer from "./container/SidebarContainer";
 //import History from "@views/History";
 
 const AppDrawerNavigator = createDrawerNavigator(
 	{
-		Login: { screen: HomeContainer },
-  	Home: { screen: HomeContainer },
-  	History: { screen: HomeContainer },
+		Home: { screen: HomeContainer },
+		Login: { screen: Login }, 
+  	History: { screen: HistoryContainer },
 	},
 	{
 		contentComponent: (props: any) => <Sidebar {...props} />,

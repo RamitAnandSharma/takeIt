@@ -8,8 +8,8 @@ const routes = [
 		caption: "Home",
 	},
 	{
-		route: "BlankPage",
-		caption: "Blank Page",
+		route: "History",
+		caption: "History",
 	},
 	{
 		route: "Login",
@@ -35,15 +35,7 @@ export default class Sidebar extends Component<Props, State> {
 						dataArray={routes}
 						renderRow={data => {
 							return (
-								// <ListItem
-								// 	button
-								// 	onPress={() => {
-								// 		data.route === "Login"
-								// 			? this.props.navigation.navigate(data.route) //this.props.navigation.dispatch(resetAction)
-								// 			: this.props.navigation.navigate(data.route);
-								// 	}}
-								// >
-								<ListItem button >
+								<ListItem button onPress={() => this.props.navigation.navigate(data.route) } >
 									<Text>{data.caption}</Text>
 								</ListItem>
 							);

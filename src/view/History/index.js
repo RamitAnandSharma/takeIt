@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { Container, Header, Title, Left, List, ListItem, Icon, Right, Button, Body, Content,Text, Card, CardItem } from "native-base";
-import { DrawerActions } from 'react-navigation-drawer';
+//import { DrawerActions } from 'react-navigation-drawer';
 import { profile } from './../../store/actions/home'
 
 export interface Props {
@@ -10,7 +10,7 @@ export interface Props {
 }
 export interface State {}
 
- class Home extends Component <Props, State> {
+ class History extends Component <Props, State> {
     componentWillMount() {
 			this.props.profile();
       console.warn("initail state",this.props.status)
@@ -32,7 +32,7 @@ export interface State {}
 								</Button>
 							</Left>
 							<Body>
-								<Title>Home</Title>
+								<Title>History</Title>
 							</Body>
 							<Right />
 						</Header>
@@ -62,6 +62,6 @@ const mapDispatchToProps = dispatch => ({
     profile: () => dispatch(profile())
 })
  
-const HomeContainer = connect(mapStateToProps,  mapDispatchToProps)(Home)
+const HistoryContainer = connect(mapStateToProps,  mapDispatchToProps)(History)
 
-export default HomeContainer;
+export default HistoryContainer;
