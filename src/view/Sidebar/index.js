@@ -15,6 +15,10 @@ const routes = [
 		route: "Login",
 		caption: "Logout",
 	},
+	{
+		route: "Login",
+		caption: "Login",
+	},
 ];
 
 export interface Props {

@@ -1,1 +1,1 @@
-export { profile } from "./home"; 
+export { profile, fetchOrders } from "./home"; 

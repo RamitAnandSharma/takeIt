@@ -13,11 +13,11 @@ export default class Setup extends Component<Props> {
   render() {
     const store = configureStore();
     return (
-      //<StyleProvider style={getTheme(variables)}>
-      <Provider store={store}>
-        <AppContainer />
-      </Provider>
-    //  </StyleProvider>
+      <StyleProvider style={getTheme(variables)}>
+        <Provider store={store}>
+          <AppContainer />
+        </Provider>
+      </StyleProvider>
     );
   }
 
