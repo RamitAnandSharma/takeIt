@@ -1,6 +1,3 @@
-// import { HistoryContainer } from "./history";
-// export { HistoryContainer };
-
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Container, Header, Title, Left, Right, Icon, Button, Body, Content,Text, Spinner} from "native-base";

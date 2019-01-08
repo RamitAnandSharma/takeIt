@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Sidebar from "./../../view/Sidebar";
+import Sidebar from "@view/Sidebar";
 
 export interface Props {
 	navigation: any;

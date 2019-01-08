@@ -4,19 +4,25 @@ import { Dimensions } from "react-native";
 import { Root } from "native-base";
 
 const deviceWidth = Dimensions.get("window").width;
-//import Login from "@views/Login";
+//import Login from "./view/Login";
 import Sidebar from "./view/Sidebar";
-import HomeContainer  from "./view/Home";
-import HistoryContainer  from "./view/History";
-import LoginContainer from "./container/LoginContainer/LoginForm";
-import SidebarContainer from "./container/SidebarContainer";
-//import History from "@views/History";
+import HomeContainer from "./view/Home";
+import HistoryContainer from "./view/History";
+import Start from "./view/Start";
+import Login from "./container/LoginContainer/LoginForm";
+//import Login from "./view/Login";
+
+import SettingsContainer from "./view/Settings";
+//import SidebarContainer from "./container/SidebarContainer";
 
 const AppDrawerNavigator = createDrawerNavigator(
 	{
-		History: { screen: HistoryContainer  },
+
+		Login: { screen: Login },
+		Start: { screen: Start },
 		Home: { screen: HomeContainer },
-  	Login: { screen: LoginContainer },
+		Settings: { screen: SettingsContainer  },
+		History: { screen: HistoryContainer  }
 	},
 	{
 		contentComponent: (props: any) => <Sidebar {...props} />,

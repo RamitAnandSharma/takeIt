@@ -1,10 +1,18 @@
 
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
 import person from './home';
 import orderReduce from './orders';
-const rootReducer = combineReducers({
+
+import { reducer as formReducer } from 'redux-form';
+
+const appReducer = combineReducers({
     person,
     orderReduce
+})
+
+const rootReducer = combineReducers({
+    form: formReducer,
+    appReducer
 })
 
 export default rootReducer

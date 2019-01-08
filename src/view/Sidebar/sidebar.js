@@ -1,6 +1,3 @@
-// import { Sidebar } from "./sidebar";
-// export { Sidebar };
-
 import React, {Component} from "react";
 import { Image, StatusBar } from "react-native";
 import { Content, Text, List, ListItem, Icon, Container, Left, Right, Badge } from "native-base";
@@ -9,12 +6,6 @@ import { NavigationActions } from "react-navigation";
 import styles from "./style";
 
 const routes = [
-	{
-		name: "Start",
-		route: "Start",
-		icon: "albums",
-		bg: "#C5F442"
-	},
 	{
 		name: "Home",
 		route: "Home",
@@ -27,6 +18,12 @@ const routes = [
 		icon: "albums",
     bg: "#477EEA",
     types: "6"
+	},
+	{
+		name: "Settings",
+		route: "Settings",
+		icon: "albums",
+    bg: "#C5F442",
 	},
 	{
 		name: "Logout",

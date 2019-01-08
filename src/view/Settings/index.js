@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { Container, Header, Title, Left, Right, Icon, Button, Body, Content,Text, Spinner} from "native-base";
 
 import { fetchOrders } from './../../store/actions/home';
-import { OrderItem } from './ordercard';
 
 export interface Props {
 	status: any;
@@ -17,7 +16,7 @@ export interface State {
 	items : any
 }
 
- class History extends Component{
+ class Settings extends Component {
 
   componentWillMount() {
     console.log(this);
@@ -54,7 +53,7 @@ export interface State {
 							<Right />
 						</Header>
 						<Content>
-							{this.renderItems()}
+							<Text>Settings</Text>
 						</Content>
 					 </Container>
         );
@@ -69,6 +68,6 @@ const mapDispatchToProps = dispatch => ({
     fetchOrders: () => dispatch(fetchOrders())
 })
 
-const HistoryContainer = connect(mapStateToProps,  mapDispatchToProps)(History)
+const SettingsContainer = connect(mapStateToProps,  mapDispatchToProps)(Settings)
 
-export default HistoryContainer;
+export default SettingsContainer;

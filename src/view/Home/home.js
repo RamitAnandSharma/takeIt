@@ -1,8 +1,3 @@
-
-// import { HomeContainer } from "./home";
-// export { HomeContainer };
-
-
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { Container, Header, Title, Left, List, ListItem, Icon, Right, Button, Body, Content,Text, Card, CardItem } from "native-base";
@@ -44,10 +39,10 @@ export interface State {}
 						 <Content padder>
 			          <List>
 			            <ListItem>
-			              <Text  onPress={() => this.test()}>Simon Mignolet</Text>
+			              <Text  onPress={() => this.test()}>Simon Mignolet ss</Text>
 			            </ListItem>
 			            <ListItem>
-			              <Text>Nathaniel Clyne</Text>
+			              <Text>Nathaniel Clynesss</Text>
 			            </ListItem>
 			            <ListItem>
 			              <Text>Dejan Lovren</Text>
