@@ -9,7 +9,7 @@ const DEVICE_HEIGHT = Dimensions.get('window').height;
 
 import Wallpaper from './../../modules/Wallpaper';
 import logoImg from '../../../assets/images/logo.png';
-import bgSrc from '../../../assets/images/wallpaper2.png';
+import bgSrc from '../../../assets/images/wallpaper1.png';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Login } from "../../view/Login";
@@ -53,6 +53,7 @@ class LoginForm extends Component <Props, State> {
 	render() {
 		return (
 		<KeyboardAvoidingView style={styles.container} behaviour="padding" >
+		<ImageBackground source={bgSrc} style={styles.imgBackground} >
 				<View style={styles.logoContainer}>
 					<Image source={logoImg} style={styles.image} />
 					<View style={{flexDirection: 'row', marginTop:10, alignItems: 'center', justifyContent: 'center',}}>
@@ -85,6 +86,7 @@ class LoginForm extends Component <Props, State> {
 					 <Text style={styles.buttonText}>Create</Text>
 				 </TouchableOpacity>
 			 </View>
+	 	</ImageBackground>
 		</KeyboardAvoidingView>
 		);
 	}
@@ -188,7 +190,7 @@ inputMargin: {
 	marginBottom:20,
 },
 icon: {
- //color: '#FFF',
+ color: '#FFF',
 },
  error :{
 	 color: 'red'
