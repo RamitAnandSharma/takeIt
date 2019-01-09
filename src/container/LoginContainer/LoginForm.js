@@ -82,7 +82,7 @@ class LoginForm extends Component <Props, State> {
 			 <View style={styles.containerSignUp} >
 				 <Text style={styles.text} onPress={() => this.login()} >Don't have an account? </Text>
 				 <TouchableOpacity activeOpacity={0.7} onPress={() => this.login()} style={{...styles.buttonContainer, padding:10}}>
-					 <Text style={styles.buttonText}>Create</Text>
+					 <Text style={styles.buttonText}>Sign Up</Text>
 				 </TouchableOpacity>
 			 </View>
 		</KeyboardAvoidingView>
