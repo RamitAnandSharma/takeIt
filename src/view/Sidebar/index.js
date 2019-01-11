@@ -10,6 +10,11 @@ import styles from "./style";
 
 const routes = [
 	{
+		name: "Vselect",
+		route: "Vselect",
+		icon: "albums",
+		bg: "#C5F442"
+	},{
 		name: "Start",
 		route: "Start",
 		icon: "albums",

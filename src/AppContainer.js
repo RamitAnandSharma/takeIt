@@ -1,32 +1,59 @@
 import React, {Component} from "react";
-import { createAppContainer, createDrawerNavigator } from "react-navigation";
-import { Dimensions } from "react-native";
+import { createAppContainer, createDrawerNavigator, createStackNavigator } from "react-navigation";
+import { HeaderBackButton } from 'react-navigation';
+
+import { Dimensions, YellowBox } from "react-native";
 import { Root } from "native-base";
 
 const deviceWidth = Dimensions.get("window").width;
-//import Login from "./view/Login";
+
 import Sidebar from "./view/Sidebar";
 import HomeContainer from "./view/Home";
 import HistoryContainer from "./view/History";
 import Start from "./view/Start";
 import Login from "./container/LoginContainer/LoginForm";
-//import Login from "./view/Login";
-
+import VendorSelectionContainer from "./container/VendorSelectionContainer";
+import VendorDetailsContainer from "./container/VendorDetailsContainer";
 import SettingsContainer from "./view/Settings";
-//import SidebarContainer from "./container/SidebarContainer";
+
+import MyVendorsContainer from "./container/MyVendorsContainer";
+
+
+const navigationOptions = ({ navigation }) => ({
+    headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} />,
+})
+
+const AppStackNavigator = createStackNavigator({
+	  DetailView: { screen: VendorDetailsContainer,
+	    // Optional: Override the `navigationOptions` for the screen
+	    // navigationOptions: ({ navigation }) => ({
+			// 	 title: `${navigation.state.params.name} Profile`,
+			// 	 headerLeft: () =>  <HeaderBackButton onPress={() => navigation.goBack(null)} />
+			//  }),
+	  },
+	},
+  {
+    mode: 'modal',
+    headerMode: 'none',
+    // defaultNavigationOptions: {
+    //   gesturesEnabled: false,
+    // },
+  }
+);
 
 const AppDrawerNavigator = createDrawerNavigator(
 	{
 
+    MyVendorsView: { screen: MyVendorsContainer },
+		VSelect: { screen: VendorSelectionContainer },
 		Login: { screen: Login },
 		Start: { screen: Start },
 		Home: { screen: HomeContainer },
 		Settings: { screen: SettingsContainer  },
-		History: { screen: HistoryContainer  }
+		History: { screen: HistoryContainer  },
+		AppStackNavigator: AppStackNavigator
 	},
-	{
-		contentComponent: (props: any) => <Sidebar {...props} />,
-  }
+	{ contentComponent: (props: any) => <Sidebar {...props} />, }
 );
 
 const AppNavigatorContainer =  createAppContainer(AppDrawerNavigator);
@@ -40,3 +67,6 @@ export default class AppContainer extends Component {
     );
   }
 }
+YellowBox.ignoreWarnings(
+      ['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader'
+]);

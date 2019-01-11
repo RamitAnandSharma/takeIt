@@ -64,10 +64,10 @@ class LoginForm extends Component <Props, State> {
 					<Field name="username" type="text" validate={[ required, maxLength15 ]}  component={this.renderUsername}/>
 					<Field name="password" type="text" ref={(input) => this.passwordInput = input} validate={[ required, minLength8, maxLength15 ]} component=
 					 { ({ input, label, returnKeyType, type, meta: { touched, error, warning, handleSubmit, pristine, reset, submitting  } }) =>
-						<View style={styles.inputMargin}>
+						<View style={styles.inputMargin}> 
 							<TextInput style={styles.input} {...input} secureTextEntry={this.state.hidePassword} underlineColorAndroid="transparent" placeholder="Password" returnKeyType="go" autoCapitalize="none"></TextInput>
 								<TouchableOpacity style={styles.showButton} onPress={ this.managePasswordVisibility}>
-									<Icon style={styles.icon} name={( this.state.hidePassword )? 'eye' : 'eye-slash'} size={20}/>
+									<Icon name={( this.state.hidePassword )? 'eye' : 'eye-slash'} size={20}/>
 								</TouchableOpacity>
 								{touched && error && <Text style={styles.error}>{error}</Text>}
 						</View>
